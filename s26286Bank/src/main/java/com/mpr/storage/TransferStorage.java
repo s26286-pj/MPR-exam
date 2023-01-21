@@ -1,18 +1,16 @@
 package com.mpr.storage;
 
 import com.mpr.model.Transfer;
-import com.mpr.model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+@Component
 public class TransferStorage {
 
     private final List<Transfer> transferList = new ArrayList<>();
-    public TransferStorage() {
-
-    }
+    public TransferStorage() {}
 
     public void add (Transfer transfer) {
         transferList.add(transfer);
