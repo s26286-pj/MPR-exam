@@ -22,7 +22,10 @@ public class UserStorage {
                 .findFirst();
     }
 
-    public void updateBalance(String clientId, Number ammount) {
-        //{status, saldo}
+    public void updateBalance(String clientId, double amount) {
+        Optional<User> user = this.getUserById(clientId);
+        if (!user.isEmpty()) {
+            user.get().setBalance(amount);
+        }
     }
 }

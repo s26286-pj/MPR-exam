@@ -25,7 +25,6 @@ public class TransferService {
         double balance = user.get().getBalance();
         if (balance-ammount > 0) {
             userStorage.updateBalance(clientId, balance-ammount);
-            user.get().setBalance(balance-ammount);
             return new TransferInfo(Status.ACCEPTED, user.get().getBalance());
         } else {
             return new TransferInfo(Status.DECLINED, balance);
