@@ -26,8 +26,9 @@ public class UserService {
         }
     }
 
-    public void updateBalanceById(String id, double newBalance) {
+    public User updateBalanceById(String id, double newBalance) {
         User user = this.findUserbyId(id);
         user.setBalance(newBalance);
+        return user;
     }
 }

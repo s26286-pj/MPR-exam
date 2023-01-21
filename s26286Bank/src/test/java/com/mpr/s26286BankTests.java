@@ -3,7 +3,6 @@ package com.mpr;
 import com.mpr.model.Status;
 import com.mpr.model.TransferInfo;
 import com.mpr.model.User;
-import com.mpr.storage.TransferStorage;
 import com.mpr.storage.UserStorage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,8 +17,7 @@ class s26286BankTests {
 	@BeforeEach
 	void setup() {
 		UserStorage userStorage = new UserStorage();
-		TransferStorage transferStorage = new TransferStorage();
-		transferService = new TransferService(userStorage, transferStorage);
+		transferService = new TransferService(userStorage);
 		userService = new UserService(userStorage);
 	}
 	@Test

@@ -3,7 +3,6 @@ package com.mpr;
 import com.mpr.model.Status;
 import com.mpr.model.TransferInfo;
 import com.mpr.model.User;
-import com.mpr.storage.TransferStorage;
 import com.mpr.storage.UserStorage;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +11,8 @@ import java.util.Optional;
 @Component
 public class TransferService {
     private final UserStorage userStorage;
-    private final TransferStorage transferStorage;
-    public TransferService(UserStorage userStorage, TransferStorage transferStorage) {
+    public TransferService(UserStorage userStorage) {
         this.userStorage = userStorage;
-        this.transferStorage = transferStorage;
     }
     public TransferInfo makeTransferFrom(String clientId, double ammount) {
         Optional<User> user = userStorage.getUserById(clientId);
